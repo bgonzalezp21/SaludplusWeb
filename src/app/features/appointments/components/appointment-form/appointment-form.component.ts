@@ -26,7 +26,7 @@ import { Appointment, AppointmentService } from '../../services/appointment.serv
     MatNativeDateModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSnackBarModule // Añadir MatSnackBarModule aquí
+    MatSnackBarModule 
   ],
   templateUrl: './appointment-form.component.html',
   styleUrl: './appointment-form.component.css'
@@ -39,8 +39,8 @@ export class AppointmentFormComponent implements OnInit {
 
   constructor(
     private doctorService: DoctorService,
-    private appointmentService: AppointmentService, // Inyecta AppointmentService
-    private snackBar: MatSnackBar // Inyecta MatSnackBar
+    private appointmentService: AppointmentService, 
+    private snackBar: MatSnackBar 
   ) {
     // Inicializa minDate para que no se puedan agendar citas en el pasado
     this.minDate = new Date();
