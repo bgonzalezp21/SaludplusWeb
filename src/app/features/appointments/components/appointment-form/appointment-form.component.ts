@@ -42,7 +42,6 @@ export class AppointmentFormComponent implements OnInit {
     private appointmentService: AppointmentService, 
     private snackBar: MatSnackBar 
   ) {
-    // Inicializa minDate para que no se puedan agendar citas en el pasado
     this.minDate = new Date();
   }
 
