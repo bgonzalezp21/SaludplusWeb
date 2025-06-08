@@ -1,0 +1,39 @@
+<mat-card class="calendar-container">
+  <mat-card-header>
+    <mat-card-title>Calendario de Citas</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="calendar-and-details">
+      <mat-calendar
+        [dateClass]="dateClass"
+        (selectedChange)="onDateSelected($event)"
+        [selected]="selectedDate">
+      </mat-calendar>
+
+      <div class="appointment-details">
+        <h2>Citas para el día: {{ selectedDate | date:'fullDate' }}</h2>
+        <mat-list *ngIf="appointmentsOnSelectedDate.length > 0; else noAppointments">
+          <mat-list-item *ngFor="let appointment of appointmentsOnSelectedDate">
+            <h3 matListItemTitle>{{ appointment.patientName }} ({{ appointment.appointmentTime }})</h3>
+            <p matListItemLine>Médico: {{ appointment.doctorName }} - {{ appointment.specialty }}</p>
+            <p matListItemLine>Estado: {{ appointment.status }}</p>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+        <ng-template #noAppointments>
+          <p *ngIf="selectedDate">No hay citas agendadas para este día.</p>
+          <p *ngIf="!selectedDate">Seleccione una fecha en el calendario.</p>
+        </ng-template>
+      </div>
+    </div>
+
+    <mat-divider style="margin: 20px 0;"></mat-divider>
+
+    <div class="stats-card">
+      <h2>Estadísticas de Citas</h2>
+      <p>Citas Confirmadas esta semana: <strong>{{ getAppointmentsCountByPeriod().weekly }}</strong></p>
+      <p>Citas Confirmadas este mes: <strong>{{ getAppointmentsCountByPeriod().monthly }}</strong></p>
+    </div>
+
+  </mat-card-content>
+</mat-card>

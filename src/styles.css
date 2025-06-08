@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos para el snackbar (globales) */
+.snackbar-success {
+  background-color: #4CAF50 !important; /* Verde */
+  color: white !important;
+}
+
+.snackbar-error {
+  background-color: #f44336 !important; /* Rojo */
+  color: white !important;
+}
+
+.snackbar-warning {
+  background-color: #ff9800 !important; /* Naranja */
+  color: white !important;
+}
+
+.snackbar-info { /* Nuevo estilo para alertas de información */
+  background-color: #2196f3 !important; /* Azul */
+  color: white !important;
+}

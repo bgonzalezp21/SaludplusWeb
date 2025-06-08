@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Agendar Nueva Cita</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre del Paciente</mat-label>
+        <input matInput formControlName="patientName" placeholder="Ej: María Rojas">
+        <mat-error *ngIf="appointmentForm.get('patientName')?.hasError('required') && appointmentForm.get('patientName')?.touched">
+          El nombre del paciente es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Médico</mat-label>
+        <mat-select formControlName="doctorId">
+          <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">
+            {{ doctor.name }} ({{ doctor.specialty }})
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="appointmentForm.get('doctorId')?.hasError('required') && appointmentForm.get('doctorId')?.touched">
+          Debe seleccionar un médico.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de la Cita</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="appointmentDate" readonly>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="appointmentForm.get('appointmentDate')?.hasError('required') && appointmentForm.get('appointmentDate')?.touched">
+          La fecha es requerida.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Hora de la Cita</mat-label>
+        <mat-select formControlName="appointmentTime">
+          <mat-option *ngFor="let hour of availableHours" [value]="hour">
+            {{ hour }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="appointmentForm.get('appointmentTime')?.hasError('required') && appointmentForm.get('appointmentTime')?.touched">
+          La hora es requerida.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!appointmentForm.valid">Agendar Cita</button>
+    </form>
+  </mat-card-content>
+</mat-card>
