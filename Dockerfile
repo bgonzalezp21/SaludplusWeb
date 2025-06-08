@@ -18,7 +18,7 @@ COPY . .
 # El flag --output-hashing=all asegura que los nombres de los archivos compilados cambien con cada build,
 # lo cual es bueno para el caching del navegador.
 # --configuration=production optimiza la aplicación para el despliegue.
-RUN npm run build -- --output-path=./dist/saludplus --configuration=production
+RUN npm run build -- --output-path=./dist/saludplusweb --configuration=production
 
 # --- Etapa 2: Servir (Serve Stage) ---
 # Usa una imagen ligera de Nginx para servir la aplicación estática
@@ -30,7 +30,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copia los archivos estáticos de la aplicación Angular compilada desde la etapa de construcción
 # Asegúrate de que esta ruta coincida con la ruta de salida de tu build (outputPath en angular.json)
-COPY --from=build /app/dist/saludplus /usr/share/nginx/html
+COPY --from=build /app/dist/saludplusweb /usr/share/nginx/html
 
 # Expone el puerto 80, que es el puerto por defecto de Nginx
 EXPOSE 80
