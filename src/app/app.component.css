@@ -1,3 +1,54 @@
+/* src/app/app.component.css */
+
 .spacer {
   flex: 1 1 auto;
+}
+
+.app-title {
+  color: white; /* El color del texto del título en la toolbar */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold;
+  font-size: 1.4em; /* Un poco más grande para el título */
+  margin-right: 20px;
+}
+
+/* Estilos para los botones de navegación */
+.mat-toolbar button.mat-button {
+  color: rgba(255, 255, 255, 0.8); /* Un blanco un poco transparente para los botones normales */
+  font-weight: 500;
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.mat-toolbar button.mat-button:hover {
+  color: white; /* Blanco puro al pasar el ratón */
+}
+
+/* Estilo específico para el botón de "Agendar Nueva Cita" */
+.mat-toolbar button.mat-flat-button[color="accent"] {
+  background-color: #ff4081; /* Color accent de Angular Material por defecto (rosa) */
+  color: white;
+  font-weight: 600;
+  margin: 0 10px; /* Espacio a los lados para que destaque */
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+}
+
+.mat-toolbar button.mat-flat-button[color="accent"]:hover {
+  background-color: #ff80ab; /* Un tono más claro al pasar el ratón */
+}
+
+/* Contenedor principal para el contenido de la aplicación */
+.content {
+  padding: 20px; /* Espaciado generoso alrededor del contenido principal */
+  max-width: 1200px; /* Ancho máximo para que no se extienda demasiado en pantallas grandes */
+  margin: 20px auto; /* Centra el contenido y añade margen superior/inferior */
+  background-color: #ffffff; /* Fondo blanco para el contenido */
+  border-radius: 8px; /* Bordes redondeados para el contenedor principal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle elevación */
+}
+
+/* Estilos para el body general (fondo de la página) */
+body {
+  background-color: #f0f2f5; /* Un color de fondo gris claro para la página */
+  font-family: Roboto, "Helvetica Neue", sans-serif; /* Fuente por defecto de Material */
+  margin: 0; /* Asegura que no haya margen por defecto del navegador */
 }

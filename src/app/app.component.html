@@ -1,10 +1,12 @@
 <mat-toolbar color="primary">
-  <span>{{ title }}</span>
+  <a routerLink="/" class="app-title">SaludPlus</a>
   <span class="spacer"></span>
-  <a mat-button routerLink="/doctors">Médicos</a>
-  <a mat-button routerLink="/appointments">Historial Citas</a> <a mat-button routerLink="/appointments/new">Agendar Cita</a> <a mat-button routerLink="/calendar">Calendario</a>
+  <button mat-button routerLink="/doctors">Médicos</button>
+  <button mat-button routerLink="/appointments/history">Historial de Citas</button>
+  <button mat-flat-button color="accent" routerLink="/appointments/new">Agendar Nueva Cita</button>
+  <button mat-button routerLink="/calendar">Calendario</button>
 </mat-toolbar>
 
-<div style="padding: 20px;">
+<div class="content">
   <router-outlet></router-outlet>
 </div>
