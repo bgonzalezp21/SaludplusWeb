@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/saludplusweb",
+            "outputPath": "dist/saludplus",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -101,7 +101,6 @@
     }
   },
   "cli": {
-
     "analytics": "cccfbf7a-08bc-4c65-b51a-a1a4d947140d"
- }
+  }
 }
