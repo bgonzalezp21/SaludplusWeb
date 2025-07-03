@@ -1,10 +1,10 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   MatCommonModule
-} from "./chunk-EC2ZDERN.js";
+} from "./chunk-ONQZPCDV.js";
 import "./chunk-5ICBFHDG.js";
-import "./chunk-GI2LNTJK.js";
 import "./chunk-FMINMTK6.js";
+import "./chunk-GI2LNTJK.js";
 import "./chunk-FCNSLEJ3.js";
 import {
   ChangeDetectionStrategy,

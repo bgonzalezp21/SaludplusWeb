@@ -1,7 +1,7 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   MatCommonModule
-} from "./chunk-EC2ZDERN.js";
+} from "./chunk-ONQZPCDV.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -120,4 +120,4 @@ export {
   MatPseudoCheckbox,
   MatPseudoCheckboxModule
 };
-//# sourceMappingURL=chunk-EIWB5FST.js.map
+//# sourceMappingURL=chunk-RGZZZTVO.js.map

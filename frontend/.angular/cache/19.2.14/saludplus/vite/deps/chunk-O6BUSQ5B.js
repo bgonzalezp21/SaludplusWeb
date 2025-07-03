@@ -1,18 +1,17 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   MatCommonModule,
   _getEventTarget,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-EC2ZDERN.js";
+} from "./chunk-J3YLZUNU.js";
 import {
   _CdkPrivateStyleLoader
-} from "./chunk-5ICBFHDG.js";
+} from "./chunk-2QEZ2KQS.js";
 import {
   Platform,
   coerceElement
-} from "./chunk-FMINMTK6.js";
+} from "./chunk-RMV2C4JS.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -32,10 +31,10 @@ import {
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-SWIVHK54.js";
+} from "./chunk-MTES5EJZ.js";
 import {
   __spreadValues
-} from "./chunk-YHCV7DAQ.js";
+} from "./chunk-S35MAB2V.js";
 
 // node_modules/@angular/material/fesm2022/structural-styles-BQUT6wsL.mjs
 var _StructuralStylesLoader = class __StructuralStylesLoader {
@@ -677,4 +676,4 @@ export {
   MatRipple,
   MatRippleModule
 };
-//# sourceMappingURL=chunk-32CKP5D3.js.map
+//# sourceMappingURL=chunk-O6BUSQ5B.js.map
