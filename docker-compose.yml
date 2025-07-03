@@ -1,20 +1,35 @@
-version: '3.9'
+version: "3.8"
 
 services:
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: saludplus_backend
+      context: ./backend  # Cambia si tu carpeta no se llama así
     ports:
       - "8000:8000"
-    restart: always
+    volumes:
+      - ./backend:/app  # Monta el código fuente del backend
+    depends_on:
+      - db
 
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
-    container_name: saludplus_frontend
     ports:
-      - "4200:80"
-    restart: always
+      - "4200:80"  # 4200 en host, 80 en contenedor Nginx
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: saludplus
+      POSTGRES_USER: saludplususer
+      POSTGRES_PASSWORD: saludpluspass
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
+
